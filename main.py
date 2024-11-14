@@ -49,10 +49,10 @@ def main():
 
         selection = input("Type.. ")
 
-        if selection[:2] == "cd":
+        if selection[:2] == "cd" or selection[:2] == "CD":
             currentPath = nav.navigateForward(currentPath,selection)
 
-        elif selection == "b":
+        elif selection == "b" or selection == "B":
             currentPath = nav.navigateBackward(currentPath)
         
         elif selection == "1":

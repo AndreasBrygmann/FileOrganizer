@@ -3,7 +3,6 @@ import sys
 from fileHandling import readFileTypes
 from logg import defaultLogger
 
-#parentDirectory = "M:\\Google Drive\\Master ACIT\\Semester 1\\4420\\Exam\\FileOrganizer\\Sorted_Files"
 parentDirectory = sys.path[0] + "\\Sorted_Files"
 
 @defaultLogger
