@@ -18,13 +18,13 @@ python file_organizer.py
 ### Navigation
 Once the program starts, you will see a list of commands followed by the contents of the directory you are in.
 
-If you want to enter a directory simply type "cd" followed by the name of the directory. For example:
+If you want to enter a directory, simply type "cd" followed by the name of the directory. For example:
 ```bash
 cd foldername
 ```
-Note that whether or not you have a space between "cd" and the directory name doesn't matter. It works either way.
+(Note that whether or not you have a space between "cd" and the directory name doesn't matter. It works either way.)
 
-If you want to go up to the parent directory simply type the letter "b" and press enter.
+If you want to go up to the parent directory, simply type the letter "b" and press enter.
 
 Any time you move to a new directory the files and folders in that directory will be shown on screen
 
@@ -33,7 +33,7 @@ There are 2 ways of sorting files.
 
 By pressing "1" the program will sort every file in your current directory. The files will be moved to a folder called "Sorted_Files" in the directory of the code.
 
-If you want to select which files to sort, pressing "2" will give you a list of the files in the directory. Press the corresponding number 2 sort a file.
+If you want to select which files to sort, pressing "2" will give you a list of the files in the directory. Press the corresponding number to sort a file.
 
 You can also list the files in your current direnctory by pressing "3".
 
