@@ -11,7 +11,7 @@ pip install file_organizer
 ```
 3. Run the program
 ```bash
-python file_organizer.py
+file_organizer
 ```
 
 ## User guide

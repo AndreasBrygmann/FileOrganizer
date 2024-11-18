@@ -1,0 +1,13 @@
+README.md
+setup.py
+file_organizer.egg-info/PKG-INFO
+file_organizer.egg-info/SOURCES.txt
+file_organizer.egg-info/dependency_links.txt
+file_organizer.egg-info/entry_points.txt
+file_organizer.egg-info/top_level.txt
+src/__init__.py
+src/fileHandling.py
+src/logg.py
+src/main.py
+src/navigation.py
+src/sorting.py

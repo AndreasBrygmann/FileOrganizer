@@ -3,7 +3,7 @@ import sys
 from fileHandling import readFileTypes
 from logg import defaultLogger
 
-parentDirectory = sys.path[0] + "\\Sorted_Files"
+parentDirectory = sys.path[0].rpartition("\\")[0] + "\\Sorted_Files"
 
 @defaultLogger
 def createNewDirectory(path):
@@ -40,6 +40,9 @@ def assignDirectory(fileType):
 
 @defaultLogger
 def moveFile(filePath):
+    if filePath == sys.path[0] or filePath == sys.path[0].rpartition("\\")[0]:
+        print("Dude, dont sort the programfiles\n")
+        return
     fileType = filePath.rpartition(".")[2]
     fileName = filePath.rpartition("\\")[2]
     newFilePath = assignDirectory(fileType) + f"\\{fileName}"
