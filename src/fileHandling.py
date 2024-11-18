@@ -1,7 +1,7 @@
 import sys
 from csv import reader
 
-fileTypeFile = sys.path[0] + "\\file_types.csv"
+fileTypeFile = sys.path[0].rpartition("\\")[0] + "\\file_types.csv"
 
 def readFileTypes():
     fileTypes = []
