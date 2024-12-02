@@ -21,17 +21,21 @@ def showDirectory(path):
         return None
     
 def sortSingleFile(path):
-    print("Select a file to sort:")
     files = sort.findFiles(path)
-    i = 0
-    for f in files:
-        print(f'Press "{i}" to sort {f}')
-        i += 1
-    selectedFile = int(input("\nEnter a number... "))
-    if selectedFile >= 0 and selectedFile < len(files):
-        sort.moveFile(files[selectedFile])
+    if not files:
+        print("There are no files in this directory")
     else:
-        print("Please type a valid number")
+        print("Select a file to sort:")
+        
+        i = 0
+        for f in files:
+            print(f'Press "{i}" to sort {f}')
+            i += 1
+        selectedFile = int(input("\nEnter a number... "))
+        if selectedFile >= 0 and selectedFile < len(files):
+            sort.moveFile(files[selectedFile])
+        else:
+            print("Please type a valid number")
 
 def main():
     defaultPath = nav.currentDir()
@@ -62,7 +66,10 @@ def main():
         
         elif selection == "1":
             files = sort.findFiles(currentPath)
-            sort.moveFiles(files)
+            if not files:
+                print("There are no files in this directory")
+            else:
+                sort.moveFiles(files)
 
         elif selection == "2":
             sortSingleFile(currentPath)
