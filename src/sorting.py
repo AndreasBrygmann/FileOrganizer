@@ -7,35 +7,31 @@ from logg import defaultLogger
 parentDirectory = sys.path[0].rpartition("\\")[0] + "\\Sorted_Files"
 
 @defaultLogger
-def createNewDirectory(path):
+def createNewDirectory(path): #Creates a new directory
     try:
         os.mkdir(path)
         folder = path.rpartition("\\")[2]
-        #print(f"Directory {path} created successfully")
         result = f'Directory "{folder}" created successfully'
     except FileExistsError:
-        #print(f"Directory {path} already exists")
         result = f"Directory {path} already exists"
     except PermissionError:
-        #print(f"Permission denied: Unable to create {path}")
         result = f"Permission denied: Unable to create {path}"
     except Exception as e:
-        #print(f"An error occurred: {e}")
         result = f"An error occurred: {e}"
     print(result)
     return result
 
-def fetchFileName(fileType):
-    fileTypes = readFileTypes()
-    if fileTypes != None:
+def fetchFileName(fileType): #Creates a folder name for a file
+    fileTypes = readFileTypes() #Reads csv file containing file names
+    if fileTypes != None: #If the file is missing, this step is skipped
         for f in fileTypes:
-            if f[0] == fileType:
+            if f[0] == fileType: #Checks if the file extension is in the csv file
                 return parentDirectory + f"\\{f[1]}"
-    return parentDirectory + f"\\{fileType}"
+    return parentDirectory + f"\\{fileType}" #If the file extension wasn't in the csv file, or the file was missing, the folder is named after the file extension.
     
-def assignDirectory(fileType):
+def assignDirectory(fileType): #Assigns a folder name for a file
     path = fetchFileName(fileType)
-    if os.path.isdir(path) == False:
+    if os.path.isdir(path) == False: #Checks if folder already exists
         createNewDirectory(path)
     return path
 
@@ -50,19 +46,14 @@ def moveFile(filePath):
         
         try: 
             os.replace(filePath, newFilePath)
-            #print(f"File {fileName} moved successfully to {newFilePath}\n")
             result = f'File "{fileName}" moved successfully to "{newFilePath}"\n'
         except FileExistsError:
-            #print(f"File {fileName} already exists")
             result = f"File {fileName} already exists"
         except PermissionError:
-            #print(f"Permission denied could not move file: {fileName}")
             result = f"Permission denied could not move file: {fileName}"
         except FileNotFoundError:
-            #print(f"Could not find file: {fileName}")
             result = f"Could not find file: {fileName}"
         except Exception as e:
-            #print(f"An error occurred: {e}")
             result = f"An error occurred: {e}"
         print(result)
         return result
@@ -71,7 +62,7 @@ def moveFile(filePath):
         return
 
 
-def findFiles(path):
+def findFiles(path): #Returns a list of all the files in a directory
     os.chdir(path) #Changes the working directory to the directory the user selected
     files = []
     for f in os.listdir(path):
