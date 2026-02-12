@@ -25,27 +25,33 @@ cd foldername
 (Note that whether or not you have a space between "cd" and the directory name doesn't matter. It works either way.)
 
 If you want to go up to the parent directory, simply type the letter "b" and press enter.
+```bash
+b
+```
 
 Any time you move to a new directory the files and folders in that directory will be shown on screen
 
 Quit the program by typing "q"
+```bash
+q
+```
 
 ### Sorting
 There are 2 ways of sorting files.
 
-By pressing "1" the program will sort every file in your current directory. The files will be moved to a folder called "Sorted_Files" in the directory of the code.
+By pressing "1" the program will sort every file in your current directory.
+```bash
+1
+```
 
 If you want to select which files to sort, pressing "2" will give you a list of the files in the directory. Press the corresponding number to sort a file.
+```bash
+2
+```
 
 You can also list the files in your current direnctory by pressing "3".
-
-All sorted files are placed in the same folder as this program. This can be changed manually by entering "sorting.py" and changing the following line of code in line 6:
-
-```python
-parentDirectory = sys.path[0] + "\\Sorted_Files"
+```bash
+3
 ```
-This can be changed to a custom path. 
-For example:
-```python
-parentDirectory = "C:\\Users\\[User]\\Documents\\Sorted_Files"
-```
+
+The files will be sorted into folders named based on filetypes. The folders will be created in the directory the files where in.
