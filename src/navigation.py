@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def listFiles(path): #Lists the contents of your current directory
     try: 
         dirList = os.listdir(path)
@@ -12,7 +13,7 @@ def listFiles(path): #Lists the contents of your current directory
         print(f"An error occurred: {e}") 
         return None 
 
-def currentDir(): #Returnes the system path
+def defaultDir(): #Returnes the system path
     #path = sys.path[0] #Sets the path to the program folder
     path = os.path.expanduser("~") #Sets the path to the users home folder
     return path

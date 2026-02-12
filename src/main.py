@@ -1,10 +1,9 @@
 import os
 import sys
-
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
-
 import navigation as nav
 import sorting as sort
+
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__))) #path file for installation
 
 #Lists the files and folders in a directory
 def showDirectory(path):
@@ -14,7 +13,7 @@ def showDirectory(path):
             print(f"{path}\nThis folder is empty")
             return True
         else:
-            #Removes dotfiles
+            #Removes dotfiles and prints files and folders
             cleanedListDir = []
             for i in listDir:
                 if i[0] != '.':
@@ -38,15 +37,15 @@ def sortSingleFile(path):
         for f in files:
             print(f'Press "{i}" to sort {f}')
             i += 1
-        selectedFile = int(input("\nEnter a number... "))
+        selectedFile = int(input("\nEnter a number... ")) #User selects a file from the list
         if selectedFile >= 0 and selectedFile < len(files):
-            sort.moveFile(files[selectedFile])
+            sort.startSorting(files[selectedFile]) #The chosen file is passed to the sorting function
         else:
             print("Please type a valid number")
 
 #The main menu
 def main(): 
-    defaultPath = nav.currentDir()
+    defaultPath = nav.defaultDir()
     currentPath = defaultPath
 
     print("\nWelcome to the file sorter")
@@ -77,7 +76,8 @@ def main():
             if not files:
                 print("There are no files in this directory")
             else:
-                sort.moveFiles(files)
+                print(f"\nvariable passed from: files\n{files}\n")
+                sort.startSorting(currentPath, files)
 
         elif selection == "2":
             sortSingleFile(currentPath)
