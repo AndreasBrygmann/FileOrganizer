@@ -1,7 +1,7 @@
 \Sorted_Files
 \build
 \file_organizer.egg-info
-\__pycache__
+**/__pycache__/
 \test
 TODO.txt
 logfile.log
