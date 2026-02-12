@@ -13,7 +13,8 @@ def listFiles(path): #Lists the contents of your current directory
         return None 
 
 def currentDir(): #Returnes the system path
-    path = sys.path[0]
+    #path = sys.path[0] #Sets the path to the program folder
+    path = os.path.expanduser("~") #Sets the path to the users home folder
     return path
 
 def navigateForward(path,folder): #returns the path to a sub directory of the current path
