@@ -1,5 +1,7 @@
 # File Organizer
 This program lets you navigate directories and sort files based on filetype
+NB! Has this app has only been tested on a windows file system, but could in theory work on a Linux file system
+
 ## Installation instructions:
 1. Clone the files from github
 ```bash
@@ -13,6 +15,7 @@ pip install file_organizer
 ```bash
 file_organizer
 ```
+
 
 ## User guide
 ### Navigation
@@ -31,6 +34,7 @@ b
 
 Any time you move to a new directory the files and folders in that directory will be shown on screen
 
+
 Quit the program by typing "q"
 ```bash
 q
@@ -44,14 +48,17 @@ By pressing "1" the program will sort every file in your current directory.
 1
 ```
 
+
 If you want to select which files to sort, pressing "2" will give you a list of the files in the directory. Press the corresponding number to sort a file.
 ```bash
 2
 ```
+
 
 You can also list the files in your current direnctory by pressing "3".
 ```bash
 3
 ```
 
-The files will be sorted into folders named based on filetypes. The folders will be created in the directory the files where in.
+
+The files will be sorted into folders named based on filetypes. The folders will be created in the directory the files are in.
