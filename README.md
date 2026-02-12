@@ -1,6 +1,6 @@
 # File Organizer
-This program lets you navigate directories and sort files based on filetype
-NB! Has this app has only been tested on a windows file system, but could in theory work on a Linux file system
+This program lets you navigate directories and sort files based on filetype <br>
+**NB!** Has this app has only been tested on a windows file system, but could in *theory* work on a Linux file system
 
 ## Installation instructions:
 1. Clone the files from github
@@ -49,10 +49,11 @@ By pressing "1" the program will sort every file in your current directory.
 ```
 
 
-If you want to select which files to sort, pressing "2" will give you a list of the files in the directory. Press the corresponding number to sort a file.
+If you want to select which files to sort, pressing "2" will give you a list of the files in the directory.
 ```bash
 2
 ```
+Press the corresponding number to sort a file.
 
 
 You can also list the files in your current direnctory by pressing "3".
