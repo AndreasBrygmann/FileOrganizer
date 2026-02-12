@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 import navigation as nav
 import sorting as sort
 
+#Lists the files and folders in a directory
 def showDirectory(path):
     listDir = nav.listFiles(path)
     if listDir != None:
@@ -13,13 +14,19 @@ def showDirectory(path):
             print(f"{path}\nThis folder is empty")
             return True
         else:
+            #Removes dotfiles
+            cleanedListDir = []
+            for i in listDir:
+                if i[0] != '.':
+                    cleanedListDir.append(i)
             print(f"Files and direcories in {path}:")
-            print(listDir)
+            print(cleanedListDir)
             print()
             return True
     else:
         return None
-    
+
+#Creates a numbered list of files in a directory for selecting a single file to sort  
 def sortSingleFile(path):
     files = sort.findFiles(path)
     if not files:
@@ -37,7 +44,8 @@ def sortSingleFile(path):
         else:
             print("Please type a valid number")
 
-def main():
+#The main menu
+def main(): 
     defaultPath = nav.currentDir()
     currentPath = defaultPath
 
@@ -47,7 +55,7 @@ def main():
     print("Type '1' to sort every file in this folder")
     print("Type '2' select a file to sort")
     print("Type '3' to list files in this folder")
-    print("Type '9' to exit\n")
+    print("Type 'q' to exit\n")
 
     run = True
     while run == True:
@@ -80,7 +88,7 @@ def main():
                 print(f.rpartition(f'\\')[2])
             print()
         
-        elif selection == "9":
+        elif selection == "q" or selection == "Q":
             run = False
 
         else:

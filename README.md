@@ -16,7 +16,7 @@ file_organizer
 
 ## User guide
 ### Navigation
-Once the program starts, you will see a list of commands followed by the contents of the directory you are in.
+Once the program starts, you will see a list of commands followed by the contents of the directory you are in. The program opens in your home folder by default
 
 If you want to enter a directory, simply type "cd" followed by the name of the directory. For example:
 ```bash
@@ -27,6 +27,8 @@ cd foldername
 If you want to go up to the parent directory, simply type the letter "b" and press enter.
 
 Any time you move to a new directory the files and folders in that directory will be shown on screen
+
+Quit the program by typing "q"
 
 ### Sorting
 There are 2 ways of sorting files.
@@ -45,5 +47,5 @@ parentDirectory = sys.path[0] + "\\Sorted_Files"
 This can be changed to a custom path. 
 For example:
 ```python
-parentDirectory = "C:\\Users\\User\\Documents\\Sorted_Files"
+parentDirectory = "C:\\Users\\[User]\\Documents\\Sorted_Files"
 ```
