@@ -9,11 +9,11 @@ git clone https://github.com/AndreasBrygmann/FileOrganizer
 ```
 2. Install the program
 ```bash
-pip install file_organizer 
+pip install .
 ```
 3. Run the program
 ```bash
-file_organizer
+fileOrganizer
 ```
 
 
