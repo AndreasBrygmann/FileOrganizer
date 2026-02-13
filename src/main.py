@@ -3,7 +3,7 @@ import sys
 import navigation as nav
 import sorting as sort
 
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__))) #path file for installation
+#sys.path.insert(0, os.path.abspath(os.path.dirname(__file__))) #path file for installation
 
 #Lists the files and folders in a directory
 def showDirectory(path):
