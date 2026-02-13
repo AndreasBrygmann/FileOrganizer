@@ -1,6 +1,7 @@
 \Sorted_Files
 \build
 \file_organizer.egg-info
+\fileOrganizer.egg-info
 **/__pycache__/
 \test
 TODO.txt
