@@ -43,33 +43,51 @@ def sortSingleFile(path):
         else:
             print("Please type a valid number")
 
-#The main menu
-def main(): 
-    defaultPath = nav.defaultDir()
-    currentPath = defaultPath
-
-    print("\nWelcome to the file sorter")
-    print("type 'cd' followed by the folder name to enter a folder")
-    print("type 'b' to go back one folder")
+def help():
+    print("\ntype 'cd' followed by the folder name to enter a folder")
+    print("type 'back' or 'b' to go back one folder")
+    print("Type 'show' or 's' to list files and folders in this folder")
+    print("Type 'list' or 'l' to list files in this folder")
+    print("Type 'pwd' or 'p' see the current directory")
+    print("Type 'help' or 'h' to see a list of commands")
     print("Type '1' to sort every file in this folder")
     print("Type '2' select a file to sort")
-    print("Type '3' to list files in this folder")
-    print("Type 'q' to exit\n")
+    print("Type 'quit' or 'q' to exit\n")
+
+#The main menu
+def main(): 
+    defaultPath = nav.defaultDir() #The default path is set in navigation.py
+    currentPath = defaultPath
+    print("\n***Welcome to the file sorter***\n")
+    help()
+    print(f'{currentPath}')
 
     run = True
     while run == True:
-        #Checks that the directory is valid. If not, it navigates to the parent directory
-        if showDirectory(currentPath) == None:
+        selection = input("Type.. ") #input from user.
+
+        if selection[:2] == "cd":
+            currentPath = nav.navigateForward(currentPath,selection)
+            showDirectory(currentPath)
+
+        elif selection == "b" or selection == "back":
             currentPath = nav.navigateBackward(currentPath)
             showDirectory(currentPath)
 
-        selection = input("Type.. ")
+        elif selection == "s" or selection == "show":
+            showDirectory(currentPath)
 
-        if selection[:2] == "cd" or selection[:2] == "CD":
-            currentPath = nav.navigateForward(currentPath,selection)
+        elif selection == "l"  or selection == "list":
+            print(f"Files in {currentPath}:")
+            for f in sort.findFiles(currentPath):
+                print(f.rpartition(f'\\')[2])
+            print()
 
-        elif selection == "b" or selection == "B":
-            currentPath = nav.navigateBackward(currentPath)
+        elif selection == "p" or selection == "pwd":
+            print(f'{currentPath}')
+
+        elif selection == "h" or selection == "help":
+            help()
         
         elif selection == "1":
             files = sort.findFiles(currentPath)
@@ -81,17 +99,11 @@ def main():
 
         elif selection == "2":
             sortSingleFile(currentPath)
-
-        elif selection == "3":
-            print(f"Files in {currentPath}:")
-            for f in sort.findFiles(currentPath):
-                print(f.rpartition(f'\\')[2])
-            print()
         
-        elif selection == "q" or selection == "Q":
+        elif selection == "q" or selection == "quit":
             run = False
 
         else:
-            print("Please enter a valid input")
+            print(f'"{selection}" Is not a valid input. Type "help" to see commands\n')
 
 main()
