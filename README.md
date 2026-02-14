@@ -7,11 +7,15 @@ This program lets you navigate directories and sort files based on filetype <br>
 ```bash
 git clone https://github.com/AndreasBrygmann/FileOrganizer
 ```
-2. Install the program
+2. Navigate to folder
+```bash
+cd FileOrganizer
+```
+3. Install the program
 ```bash
 pip install .
 ```
-3. Run the program
+4. Run the program
 ```bash
 fileOrganizer
 ```
